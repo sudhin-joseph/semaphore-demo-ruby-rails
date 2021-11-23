@@ -1,11 +1,11 @@
 version: v1.0
-name: Heroku deployment
+name: Pipeline 3
 agent:
   machine:
     type: e1-standard-2
     os_image: ubuntu1804
 blocks:
-  - name: Deploy
+  - name: 'Block #1'
     task:
       secrets:
         - name: newapp-heroku
@@ -13,7 +13,7 @@ blocks:
         - name: HEROKU_REMOTE
           value: 'https://git.heroku.com/semaphore-demo-ruby.git'
       jobs:
-        - name: Deploy
+        - name: 'Job #1'
           commands:
             - checkout
             - ssh-keyscan -H heroku.com >> ~/.ssh/known_hosts
