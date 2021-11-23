@@ -81,6 +81,6 @@ blocks:
             - test-results publish junit.xml
 promotions:
   - name: Heroku deploy
-    pipeline_file: pipeline_3.yml
+    pipeline_file: heroku.yml
     auto_promote:
       when: branch = 'master' AND result = 'passed'
